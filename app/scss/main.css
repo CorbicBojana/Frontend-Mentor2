@@ -266,6 +266,14 @@ body {
   .header .container .nav_menu {
     display: inline-block;
   }
+  .header .container .nav_menu .menu_close {
+    display: none;
+  }
+  .header .container .nav_menu .show {
+    display: block;
+    position: relative;
+    z-index: 9999;
+  }
   .header .container .logo {
     margin-left: 10px;
   }
@@ -274,6 +282,27 @@ body {
   }
   .header .container .nav_container .nav {
     display: none;
+  }
+  .header .container .nav_container .show {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: hsl(0, 0%, 100%);
+    margin: 0;
+    height: 100vh;
+    width: 70%;
+  }
+  .header .container .nav_container .show .nav_list {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 120px;
+  }
+  .header .container .nav_container .show .nav_list .nav_list_item .nav_list_item_link {
+    padding: 20px;
+    color: hsl(220, 13%, 13%);
+    font-weight: 700;
   }
   .header .container .nav_shopping .nav_avatar {
     height: 30px;

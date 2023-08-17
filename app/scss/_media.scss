@@ -13,6 +13,16 @@
 
             .nav_menu {
                 display: inline-block;
+
+                .menu_close {
+                    display: none;
+                }
+
+                .show {
+                    display: block;
+                    position: relative;
+                    z-index: 9999;
+                }
             }
 
             .logo {
@@ -21,9 +31,36 @@
 
             .nav_container {
                 justify-content: flex-end;
-                
+
                 .nav {
                     display: none;
+                }
+                
+                .show {
+                    display: block;
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    z-index: 999;
+                    background-color: $white_color;
+                    margin: 0;
+                    height: 100vh;
+                    width: 70%;
+
+                    .nav_list {
+                        flex-direction: column;
+                        align-items: flex-start;
+                        margin-top: 120px;
+
+                        .nav_list_item {
+
+                            .nav_list_item_link {
+                                padding: 20px;
+                                color: $very_dark_blue_color;
+                                font-weight: 700;
+                            }
+                        }
+                    }
                 }
             }
 
