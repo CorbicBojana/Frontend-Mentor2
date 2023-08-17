@@ -145,6 +145,7 @@ body {
   width: 83px;
   border: 3px solid hsl(26, 100%, 55%);
   border-radius: 10px;
+  opacity: 0.4;
 }
 .main .main_container .main_thumbnail .main_opacity img:hover {
   opacity: 0.4;
