@@ -56,6 +56,7 @@ html {
 body {
   font-size: 1.6rem;
   font-family: "Kumbh Sans", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -75,8 +76,8 @@ body {
 .header {
   height: 140px;
 }
-.header .container {
-  padding: 40px 0;
+.header .container .nav_menu {
+  display: none;
 }
 .header .container .nav_container {
   justify-content: space-between;
@@ -88,16 +89,29 @@ body {
 .header .container .nav_container .nav .nav_list .nav_list_item .nav_list_item_link {
   display: inline-block;
   margin-left: 20px;
-  padding: 10px;
+  padding: 50px 0;
   color: hsl(219, 9%, 45%);
   text-decoration: none;
+  border-bottom: 4px solid transparent;
+  transition: all 0.6s ease-in;
 }
 .header .container .nav_container .nav .nav_list .nav_list_item .nav_list_item_link:hover {
+  cursor: pointer;
+  border-bottom: 4px solid hsl(26, 100%, 55%);
+  color: hsla(0, 0%, 0%, 0.75);
+}
+.header .container .nav_shopping img:hover {
   cursor: pointer;
 }
 .header .container .nav_shopping .nav_avatar {
   height: 60px;
   margin-left: 40px;
+  border: 3px solid transparent;
+  border-radius: 50%;
+  transition: all 0.6s ease-in;
+}
+.header .container .nav_shopping .nav_avatar:hover {
+  border: 3px solid hsl(26, 100%, 55%);
 }
 
 .main {
@@ -118,6 +132,9 @@ body {
   width: 400px;
   border-radius: 20px;
 }
+.main .main_container .mobile_btns {
+  display: none;
+}
 .main .main_container .main_thumbnail {
   margin-top: 40px;
   width: 400px;
@@ -128,6 +145,9 @@ body {
   width: 83px;
   border: 3px solid hsl(26, 100%, 55%);
   border-radius: 10px;
+}
+.main .main_container .main_thumbnail .main_opacity img:hover {
+  opacity: 0.4;
 }
 .main .main_container .main_thumbnail .active {
   opacity: 0.4;
@@ -199,6 +219,10 @@ body {
   font-weight: 700;
   border: none;
 }
+.main .main_intro .product_btns .btns .btn_subtract:hover, .main .main_intro .product_btns .btns .btn_add:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
 .main .main_intro .product_btns .btns .btn_subtract {
   border-radius: 8px 0 0 8px;
 }
@@ -222,7 +246,103 @@ body {
   border-radius: 14px;
   border: none;
 }
+.main .main_intro .product_btns .btn_add_to_card:hover {
+  cursor: pointer;
+  opacity: 0.6;
+}
 .main .main_intro .product_btns .btn_add_to_card img {
   margin-right: 10px;
   filter: brightness(0) invert(1);
+}
+
+@media screen and (max-width: 880px) {
+  .border_bottom {
+    border-bottom: 0;
+  }
+  .header {
+    margin: 40px;
+    height: 100%;
+  }
+  .header .container .nav_menu {
+    display: inline-block;
+  }
+  .header .container .logo {
+    margin-left: 10px;
+  }
+  .header .container .nav_container {
+    justify-content: flex-end;
+  }
+  .header .container .nav_container .nav {
+    display: none;
+  }
+  .header .container .nav_shopping .nav_avatar {
+    height: 30px;
+    margin-left: 20px;
+  }
+  .main {
+    flex-direction: column;
+  }
+  .main .main_container {
+    height: 100%;
+    width: 100%;
+    position: relative;
+  }
+  .main .main_container .main_img {
+    height: 100%;
+    width: 100%;
+    border-radius: 0;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  .main .main_container .mobile_btns {
+    display: block;
+  }
+  .main .main_container .mobile_btns .prev, .main .main_container .mobile_btns .next {
+    display: inline-block;
+    padding: 15px 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: hsl(0, 0%, 100%);
+    border-radius: 50%;
+  }
+  .main .main_container .mobile_btns .prev {
+    left: 20px;
+  }
+  .main .main_container .mobile_btns .next {
+    right: 20px;
+  }
+  .main .main_container .main_thumbnail {
+    display: none;
+  }
+  .main .main_intro {
+    margin: 20px 40px;
+    width: calc(100% - 40px);
+  }
+  .main .main_intro h2 {
+    margin-bottom: 20px;
+  }
+  .main .main_intro .product_price {
+    display: inline-block;
+  }
+  .main .main_intro .product_original_price {
+    display: inline-block;
+    margin-left: 60px;
+  }
+  .main .main_intro .product_btns {
+    flex-direction: column;
+  }
+  .main .main_intro .product_btns .btns .btn_subtract {
+    width: calc(50% - 26px);
+    text-align: start;
+  }
+  .main .main_intro .product_btns .btns .btn_add {
+    width: calc(50% - 26px);
+    text-align: end;
+  }
+  .main .main_intro .product_btns .btn_add_to_card {
+    margin: 20px 0 80px 0;
+    padding: 20px;
+    justify-content: center;
+  }
 }/*# sourceMappingURL=main.css.map */
